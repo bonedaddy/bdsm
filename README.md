@@ -1,6 +1,6 @@
-# Bonedaddys Solidity Modules
+# bdsm
 
-My personal development environment for solidity smart contract development, also a set of reusable smart contracts. None of these have officially been audited unless explicitly mentioned otherwise, use with caution.
+Solidity smart contract environment tailored for fast smart contract development with minimal dependencies.
 
 # Contracts
 
