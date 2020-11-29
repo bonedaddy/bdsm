@@ -9,6 +9,13 @@ compile:
 	./scripts/solc_compile.sh \
 		contracts/EthErc20PaymentChannel.sol \
 		bin/paymentchannel
+	./scripts/solc_compile.sh \
+		contracts/TestProxyFactory.sol \
+		bin/testproxyfactory
+	./scripts/solc_compile.sh \
+		contracts/utils/time/BokkyPooBahsDateTimeContract.sol \
+		bin/datetime \
+		compilers/solc-v0.6.0
 
 .PHONY: abigen
 abigen:
@@ -27,16 +34,18 @@ abigen:
 		bin/erc20_factory/ERC20Factory.abi \
 		erc20factory \
 		bindings/erc20factory/bindings.go
-	./scripts/solc_compile.sh \
-		contracts/utils/time/BokkyPooBahsDateTimeContract.sol \
-		bin/datetime \
-		compilers/solc-v0.6.0
 	./scripts/abigen.sh \
 		bin/datetime/BokkyPooBahsDateTimeContract.bin \
 		bin/datetime/BokkyPooBahsDateTimeContract.abi \
 		datetime \
 		bindings/datetime/bindings.go \
 		--alias="getDaysInMonth=getDaysInMonth2,_isLeapYear=IsLeapYear2"
+	./scripts/abigen.sh \
+		bin/testproxyfactory/TestProxyFactory.bin \
+		bin/testproxyfactory/TestProxyFactory.abi \
+		testproxyfactory \
+		bindings/testproxyfactory/bindings.go
+
 
 .PHONY: interfaces
 interfaces:
@@ -48,3 +57,8 @@ interfaces:
 
 .PHONY: all
 all: compile abigen interfaces
+
+
+.PHONY: copy-oz-contracts
+copy-oz-contracts:
+	(cd oz-contracts/contracts && cp -r * ../../contracts)

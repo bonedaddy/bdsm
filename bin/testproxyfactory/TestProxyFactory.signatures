@@ -1,0 +1,4 @@
+769af69d: deployInstance(address,bytes)
+1028f90a: deployProxyContract(address,bytes)
+70bf7497: numProxies()
+abd90f85: proxies(uint256)

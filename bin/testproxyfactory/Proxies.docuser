@@ -1,0 +1,6 @@
+{
+  "kind": "user",
+  "methods": {},
+  "notice": "i modified this to use a contract instead of a library as it was causing errors These functions implement a simple Factory pattern that can be used to deploy multiple proxy instances when the implementation contract needs to be reused. ",
+  "version": 1
+}
