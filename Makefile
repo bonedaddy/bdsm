@@ -13,6 +13,9 @@ compile:
 		contracts/TestProxyFactory.sol \
 		bin/testproxyfactory
 	./scripts/solc_compile.sh \
+		contracts/StructAssignTest.sol \
+		bin/structassigntest
+	./scripts/solc_compile.sh \
 		contracts/utils/time/BokkyPooBahsDateTimeContract.sol \
 		bin/datetime \
 		compilers/solc-v0.6.0
@@ -45,7 +48,11 @@ abigen:
 		bin/testproxyfactory/TestProxyFactory.abi \
 		testproxyfactory \
 		bindings/testproxyfactory/bindings.go
-
+	./scripts/abigen.sh \
+		bin/testproxyfactory/StructAssignTest.bin \
+		bin/testproxyfactory/StructAssignTest.abi \
+		structassigntest \
+		bindings/structassigntest/bindings.go
 
 .PHONY: interfaces
 interfaces:
