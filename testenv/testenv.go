@@ -94,3 +94,7 @@ func (t *Testenv) Context() context.Context {
 func (t *Testenv) Cancel() {
 	t.cancel()
 }
+
+func (t *Testenv) PK() *ecdsa.PrivateKey {
+	return t.pk
+}
