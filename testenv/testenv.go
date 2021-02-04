@@ -42,7 +42,9 @@ func NewBlockchain(ctx context.Context) (*Testenv, error) {
 func (t *Testenv) DoWaitMined(tx *types.Transaction, printArgs ...string) error {
 	t.Commit()
 	rcpt, err := bind.WaitMined(t.ctx, t, tx)
-	log.Println("gas used by transaction: ", rcpt.CumulativeGasUsed, printArgs)
+	if len(printArgs) > 0 {
+		log.Println("gas used by transaction: ", rcpt.CumulativeGasUsed, printArgs)
+	}
 	return err
 }
 
@@ -56,7 +58,9 @@ func (t *Testenv) DoWaitDeployed(tx *types.Transaction, printArgs ...string) (co
 	if err != nil {
 		return common.Address{}, err
 	}
-	log.Println("gas used by deployment transaction: ", rcpt.CumulativeGasUsed, printArgs)
+	if len(printArgs) > 0 {
+		log.Println("gas used by deployment transaction: ", rcpt.CumulativeGasUsed, printArgs)
+	}
 	return addr, nil
 }
 
