@@ -576,6 +576,9 @@ func (_Datetime *DatetimeCaller) DaysToDate(opts *bind.CallOpts, _days *big.Int)
 		Month *big.Int
 		Day   *big.Int
 	})
+	if err != nil {
+		return *outstruct, err
+	}
 
 	outstruct.Year = out[0].(*big.Int)
 	outstruct.Month = out[1].(*big.Int)
@@ -722,6 +725,9 @@ func (_Datetime *DatetimeCaller) NowDateTime(opts *bind.CallOpts) (struct {
 		Minute *big.Int
 		Second *big.Int
 	})
+	if err != nil {
+		return *outstruct, err
+	}
 
 	outstruct.Year = out[0].(*big.Int)
 	outstruct.Month = out[1].(*big.Int)
@@ -1801,6 +1807,9 @@ func (_Datetime *DatetimeCaller) TimestampToDate(opts *bind.CallOpts, timestamp 
 		Month *big.Int
 		Day   *big.Int
 	})
+	if err != nil {
+		return *outstruct, err
+	}
 
 	outstruct.Year = out[0].(*big.Int)
 	outstruct.Month = out[1].(*big.Int)
@@ -1854,6 +1863,9 @@ func (_Datetime *DatetimeCaller) TimestampToDateTime(opts *bind.CallOpts, timest
 		Minute *big.Int
 		Second *big.Int
 	})
+	if err != nil {
+		return *outstruct, err
+	}
 
 	outstruct.Year = out[0].(*big.Int)
 	outstruct.Month = out[1].(*big.Int)

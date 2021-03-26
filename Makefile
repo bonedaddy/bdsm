@@ -2,19 +2,23 @@
 compile:
 	./scripts/solc_compile.sh \
 		contracts/ERC20Factory.sol \
-		bin/erc20_factory
+		bin/erc20_factory \
+		compilers/solc-v0.7.3
 	./scripts/solc_compile.sh \
 		contracts/RuntimeFactory.sol \
 			bin/runtime_factory
 	./scripts/solc_compile.sh \
 		contracts/EthErc20PaymentChannel.sol \
-		bin/paymentchannel
+		bin/paymentchannel \
+		compilers/solc-v0.7.3
 	./scripts/solc_compile.sh \
 		contracts/TestProxyFactory.sol \
-		bin/testproxyfactory
+		bin/testproxyfactory \
+		compilers/solc-v0.7.3
 	./scripts/solc_compile.sh \
 		contracts/StructAssignTest.sol \
-		bin/structassigntest
+		bin/structassigntest \
+		compilers/solc-v0.7.3
 	./scripts/solc_compile.sh \
 		contracts/utils/time/BokkyPooBahsDateTimeContract.sol \
 		bin/datetime \
