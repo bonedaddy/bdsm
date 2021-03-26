@@ -6,7 +6,8 @@ compile:
 		compilers/solc-v0.7.3
 	./scripts/solc_compile.sh \
 		contracts/RuntimeFactory.sol \
-			bin/runtime_factory
+		bin/runtime_factory \
+		compilers/solc-v0.7.3
 	./scripts/solc_compile.sh \
 		contracts/EthErc20PaymentChannel.sol \
 		bin/paymentchannel \
